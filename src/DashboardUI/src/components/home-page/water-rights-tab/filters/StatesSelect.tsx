@@ -9,7 +9,7 @@ export function StatesSelect() {
   const {states, setStates} = useStatesFilter();
 
   const {
-    hostData:{
+    state:{
       statesQuery: { data: allStates}
     }
   } = useWaterRightsContext();

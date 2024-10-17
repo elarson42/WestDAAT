@@ -4,7 +4,6 @@ import { useWaterRightsContext } from '../../Provider';
 
 export function useBeneficialUsesFilter() {
   const context = useWaterRightsContext();
-
   const values = context.state.filters.beneficialUseNames;
 
   const setValues = (payload: string[] | undefined) => {

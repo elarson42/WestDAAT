@@ -33,8 +33,8 @@ interface State {
 type Action =
   | { type: 'RESET_USER_OPTIONS' }
   | { type: 'SET_BENEFICIAL_USE_NAME_FILTERS'; payload: string[] | undefined }
-  | { type: 'SET_STATE_FILTERS'; payload: string[] | undefined }
   | { type: 'SET_OWNER_CLASSIFICATION_FILTERS'; payload: string[] | undefined }
+  | { type: 'SET_STATE_FILTERS'; payload: string[] | undefined }
   | { type: 'SET_WATER_SOURCE_TYPE_FILTERS'; payload: string[] | undefined };
 
 interface WaterRightsContextProps {
@@ -74,6 +74,15 @@ const reducer = (state: State, action: Action): State => {
         break;
       case 'SET_BENEFICIAL_USE_NAME_FILTERS':
         draft.filters.beneficialUseNames = distinctSortedOrUndefined(action.payload);
+        break;
+      case 'SET_OWNER_CLASSIFICATION_FILTERS':
+        draft.filters.ownerClassifications = distinctSortedOrUndefined(action.payload);
+        break;
+      case 'SET_STATE_FILTERS':
+        draft.filters.states = distinctSortedOrUndefined(action.payload);
+        break;
+      case 'SET_WATER_SOURCE_TYPE_FILTERS':
+        draft.filters.waterSourceTypes = distinctSortedOrUndefined(action.payload);
         break;
       default:
         break;
