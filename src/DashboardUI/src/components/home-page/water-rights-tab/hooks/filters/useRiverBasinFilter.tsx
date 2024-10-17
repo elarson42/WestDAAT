@@ -1,4 +1,3 @@
-import React from 'react';
 import { useCallback, useEffect, useMemo } from "react";
 import { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
 import { useWaterRightsContext } from "../../Provider";
