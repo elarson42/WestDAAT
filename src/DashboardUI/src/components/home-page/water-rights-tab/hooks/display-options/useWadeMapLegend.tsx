@@ -42,7 +42,7 @@ export function useWadeLegend() {
       const tryParseJsonArray = (value: any) => {
         try {
           return JSON.parse(value ?? "[]");
-        } catch (e) {
+        } catch {
           return [];
         }
       }
