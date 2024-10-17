@@ -9,7 +9,7 @@ export function WaterSourceTypesSelect() {
   const {waterSourceTypes, setWaterSourceTypes} = useWaterSourceTypesFilter();
 
   const {
-    hostData:{
+    state:{
       waterSourcesQuery: {data: allWaterSourceTypes}
     }
   } = useWaterRightsContext();

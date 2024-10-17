@@ -19,6 +19,10 @@ const allWaterRightsLayers = [
   mapLayerNames.waterRightsPointsLayer,
   mapLayerNames.waterRightsPolygonsLayer
 ]
+
+// note that these all eventually get filters from water-rights-tab/Provider.tsx
+// middle step might be to keep using hooks but use dispatch 
+
 export function useFilters() {
   const {setLayerFilters: setMapLayerFilters} = useMapContext();
 
