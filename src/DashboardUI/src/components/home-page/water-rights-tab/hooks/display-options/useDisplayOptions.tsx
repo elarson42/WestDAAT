@@ -16,7 +16,7 @@ const nldiLayers = [
 ];
 export function useDisplayOptions() {
   const {
-    filters: { riverBasinNames, isNldiFilterActive },
+    state: { filters: { riverBasinNames, isNldiFilterActive } }
   } = useWaterRightsContext();
 
   const { setVisibleLayers } = useMapContext();

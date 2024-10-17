@@ -11,7 +11,7 @@ import { MapTheme, MapGrouping, PointSize } from "./display-options";
 import { useNldiFilter } from "./hooks/filters/useNldiFilter";
 
 function SideBar() {
-  const {resetUserOptions} = useWaterRightsContext();
+  const { dispatch } = useWaterRightsContext();
   const { isNldiFilterActive, setNldiMapActiveStatus} = useNldiFilter()
  
   const [activeKeys, setActiveKeys] = useState(isNldiFilterActive ? ["nldi"] : ["colorSizeTools", "siteSelectionFilters"]);
@@ -40,7 +40,7 @@ function SideBar() {
   return (
     <>
       <div className="m-3">
-        <Button variant="outline-danger" className="w-100" onClick={resetUserOptions}>
+        <Button variant="outline-danger" className="w-100" onClick={() => dispatch({ type: 'RESET_USER_OPTIONS' })}>
           Reset All Filters
         </Button>
       </div>

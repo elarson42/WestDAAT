@@ -4,7 +4,7 @@ import { WaterRightsSearchCriteria } from "../../../../data-contracts/WaterRight
 import moment from "moment";
 
 export function useWaterRightsSearchCriteria() {
-  const {filters, nldiIds} = useWaterRightsContext();
+  const {filters, nldiIds} = useWaterRightsContext().state;
 
   return useWaterRightsSearchCriteriaWithoutContext({filters, nldiIds})
 }
